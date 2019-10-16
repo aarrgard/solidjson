@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0",
+  "info": {
+    "title": "test",
+    "license": {
+      "name": "MIT",
+      "url": "http://mit.license/"
+    },
+    "version": "2.1.4"
+  }
+}

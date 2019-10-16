@@ -1,0 +1,9 @@
+.vs
+obj
+bin
+package-lock.json
+node_modules
+*.csproj.user
+
+/SolidRpc.Tests/appsettings_local.json
+/SolidRpc.Security.Impl/react/build

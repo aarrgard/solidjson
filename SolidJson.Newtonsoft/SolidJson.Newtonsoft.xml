@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SolidJson.Newtonsoft</name>
+    </assembly>
+    <members>
+        <member name="T:SolidRpc.Json.Newtonsoft.JsonReaderFactory">
+            <summary>
+            Factory that creates json reader using the newtonsoft reader.
+            </summary>
+        </member>
+        <member name="M:SolidRpc.Json.Newtonsoft.JsonReaderFactory.CreateReader(System.IO.TextReader)">
+            <summary>
+            Creates the reader
+            </summary>
+            <param name="tr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SolidRpc.Json.Newtonsoft.JsonWriterFactory">
+            <summary>
+            Factory that creates json writer using the newtonsoft writer.
+            </summary>
+        </member>
+        <member name="M:SolidRpc.Json.Newtonsoft.JsonWriterFactory.CreateWriter(System.IO.TextWriter,System.Boolean)">
+            <summary>
+            Creates the writer
+            </summary>
+            <param name="tw"></param>
+            <param name="pretty"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
