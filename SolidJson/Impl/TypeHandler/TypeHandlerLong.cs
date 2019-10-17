@@ -6,16 +6,16 @@ namespace SolidJson.Impl.TypeHandler
 {
     public class TypeHandlerLong : TypeHandlerBase<long>
     {
-        public override IJsonStruct CreateJsonStruct(object parent, object data)
+        public override IJsonStruct CreateJsonStruct(IJsonFactory factory, object data)
         {
             if (data == null) return null;
-            return new JsonInteger(parent) { Integer = (long)data };
+            return new JsonInteger(factory) { Integer = (long)data };
 
         }
 
-        public override IJsonStruct CreateNewJsonStruct(object parent)
+        public override IJsonStruct CreateNewJsonStruct(IJsonFactory factory)
         {
-            return new JsonInteger(parent);
+            return new JsonInteger(factory);
         }
 
         public override long CreateType(IJsonStruct jsonStruct)

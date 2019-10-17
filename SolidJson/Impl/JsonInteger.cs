@@ -14,8 +14,8 @@ namespace SolidJson.Impl
         /// <summary>
         /// Constructs a new instance
         /// </summary>
-        /// <param name="parent"></param>
-        public JsonInteger(object parent) : base(parent)
+        /// <param name="factory"></param>
+        public JsonInteger(IJsonFactory factory) : base(factory)
         {
         }
 

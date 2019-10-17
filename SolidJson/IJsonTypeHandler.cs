@@ -17,17 +17,17 @@ namespace SolidJson
         /// <summary>
         /// Creates a default json struct for this type(not null)
         /// </summary>
-        /// <param name="parent"></param>
+        /// <param name="factory"></param>
         /// <returns></returns>
-        IJsonStruct CreateNewJsonStruct(object parent);
+        IJsonStruct CreateNewJsonStruct(IJsonFactory factory);
 
         /// <summary>
         /// Creates a JsonStruct for supplied data
         /// </summary>
-        /// <param name="parent"></param>
+        /// <param name="factory"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        IJsonStruct CreateJsonStruct(object parent, object data);
+        IJsonStruct CreateJsonStruct(IJsonFactory factory, object data);
 
         /// <summary>
         /// Creates a type from supplied jsonStruct

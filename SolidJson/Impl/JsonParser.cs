@@ -15,9 +15,9 @@ namespace SolidJson.Impl
         /// </summary>
         public JsonParser(IJsonFactory jsonFactory)
         {
-            JsonFactory = jsonFactory;
+            Factory = jsonFactory;
         }
-        private IJsonFactory JsonFactory { get; }
+        private IJsonFactory Factory { get; }
 
         /// <summary>
         /// Parses the supplied text as json.
@@ -41,7 +41,7 @@ namespace SolidJson.Impl
         /// <returns></returns>
         public async Task<IJsonStruct> ParseAsync(TextReader tr, CancellationToken cancellationToken = default(CancellationToken))
         {
-            using (var jr = JsonFactory.JsonReaderFactory.CreateReader(tr))
+            using (var jr = Factory.JsonReaderFactory.CreateReader(tr))
             {
                 return await ParseAsync(jr, cancellationToken);
             }
@@ -59,7 +59,7 @@ namespace SolidJson.Impl
             {
                 return null;
             }
-            return await ParseAsync(jr, JsonFactory, cancellationToken);
+            return await ParseAsync(jr, Factory, cancellationToken);
         }
 
         private async Task<IJsonStruct> ParseAsync(IJsonReader jr, object parent, CancellationToken cancellationToken)
@@ -72,7 +72,7 @@ namespace SolidJson.Impl
                 case JsonToken.Integer:
                 case JsonToken.Float:
                 case JsonToken.String:
-                    s = JsonFactory.CreateJsonStruct(parent, jr.Value?.GetType(), jr.Value);
+                    s = Factory.CreateJsonStruct(jr.Value?.GetType(), jr.Value);
                     break;
                 case JsonToken.StartArray:
                     s = await ParseArrayAsync(jr, parent, cancellationToken);
@@ -89,7 +89,7 @@ namespace SolidJson.Impl
         private async Task<JsonObject> ParseObjectAsync(IJsonReader jr, object parent, CancellationToken cancellationToken)
         {
             if (jr.TokenType != JsonToken.StartObject) throw new Exception("Not an object");
-            var obj = new JsonObject(parent);
+            var obj = new JsonObject(Factory);
             if (!(await jr.ReadAsync(cancellationToken))) throw new Exception("Failed to read object element.");
             while (jr.TokenType != JsonToken.EndObject)
             {
@@ -105,7 +105,7 @@ namespace SolidJson.Impl
         private async Task<JsonArray> ParseArrayAsync(IJsonReader jr, object parent, CancellationToken cancellationToken)
         {
             if (jr.TokenType != JsonToken.StartArray) throw new Exception("Not an array");
-            var arr = new JsonArray(parent);
+            var arr = new JsonArray(Factory);
             if (!(await jr.ReadAsync(cancellationToken))) throw new Exception("Failed to read array element.");
             while (jr.TokenType != JsonToken.EndArray)
             {

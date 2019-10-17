@@ -6,16 +6,16 @@ namespace SolidJson.Impl.TypeHandler
 {
     public class TypeHandlerString : TypeHandlerBase<string>
     {
-        public override IJsonStruct CreateJsonStruct(object parent, object data)
+        public override IJsonStruct CreateJsonStruct(IJsonFactory factory, object data)
         {
             if (data == null) return null;
-            return new JsonString(parent) { String = (string)data };
+            return new JsonString(factory) { String = (string)data };
 
         }
 
-        public override IJsonStruct CreateNewJsonStruct(object parent)
+        public override IJsonStruct CreateNewJsonStruct(IJsonFactory factory)
         {
-            return new JsonString(parent);
+            return new JsonString(factory);
         }
 
         public override string CreateType(IJsonStruct jsonStruct)

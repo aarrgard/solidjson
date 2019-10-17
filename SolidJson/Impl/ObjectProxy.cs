@@ -70,6 +70,7 @@ namespace SolidJson.Impl
         {
             return JsonObject.Remove(name);
         }
+        IJsonFactory IJsonStruct.Factory => JsonObject.Factory;
         IJsonStruct IJsonStruct.Parent => JsonObject.Parent;
 
         IJsonStruct IJsonStruct.RawStruct => JsonObject.RawStruct;
@@ -158,31 +159,69 @@ namespace SolidJson.Impl
                 switch (action)
                 {
                     case "get":
-                        return (args, jsonObject) =>
+                        if(property.GetMethod.GetParameters().Length == 0)
                         {
-                            var jsonStruct = jsonObject[jsonName];
-                            if(jsonStruct == null)
+                            return (args, jsonObject) =>
                             {
-                                jsonStruct=jsonObject.GetParent<IJsonFactory>().CreateNewJsonStruct(jsonObject, propertyType);
-                                jsonObject[jsonName] = jsonStruct;
-                            }
-                            return jsonStruct.As(propertyType);
-                        };
+                                var jsonStruct = jsonObject[jsonName];
+                                if (jsonStruct == null)
+                                {
+                                    jsonStruct = jsonObject.Factory.CreateNewJsonStruct(propertyType);
+                                    jsonObject[jsonName] = jsonStruct;
+                                }
+                                return jsonStruct.As(propertyType);
+                            };
+                        }
+                        else
+                        {
+                            return (args, jsonObject) =>
+                            {
+                                var propName = args[0].ToString();
+                                var jsonStruct = jsonObject[propName];
+                                if (jsonStruct == null)
+                                {
+                                    jsonStruct = jsonObject.Factory.CreateNewJsonStruct(propertyType);
+                                    jsonObject[propName] = jsonStruct;
+                                }
+                                return jsonStruct.As(propertyType);
+                            };
+                        }
                     case "set":
-                        return (args, jsonObject) =>
+                        if(property.SetMethod.GetParameters().Length == 1)
                         {
-                            var jsonFactory = jsonObject.GetParent<IJsonFactory>();
-                            if (!emitDefaultValue && jsonFactory.IsDefaultValue(propertyType, args[0]))
+                            return (args, jsonObject) =>
                             {
-                                jsonObject.Remove(jsonName);
-                            }
-                            else
+                                var jsonFactory = JsonObject.Factory;
+                                if (!emitDefaultValue && jsonFactory.IsDefaultValue(propertyType, args[0]))
+                                {
+                                    jsonObject.Remove(jsonName);
+                                }
+                                else
+                                {
+                                    var newObject = jsonFactory.CreateJsonStruct(propertyType, args[0]);
+                                    jsonObject[jsonName] = newObject;
+                                }
+                                return null;
+                            };
+                        }
+                        else
+                        {
+                            return (args, jsonObject) =>
                             {
-                                var newObject = jsonFactory.CreateJsonStruct(jsonObject, propertyType, args[0]);
-                                jsonObject[jsonName] = newObject;
-                            }
-                            return null;
-                        };
+                                var propName = args[0].ToString();
+                                var jsonFactory = JsonObject.Factory;
+                                if (!emitDefaultValue && jsonFactory.IsDefaultValue(propertyType, args[1]))
+                                {
+                                    jsonObject.Remove(propName);
+                                }
+                                else
+                                {
+                                    var newObject = jsonFactory.CreateJsonStruct(propertyType, args[1]);
+                                    jsonObject[propName] = newObject;
+                                }
+                                return null;
+                            };
+                        }
                 }
 
             }

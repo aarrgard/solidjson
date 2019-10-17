@@ -23,9 +23,8 @@ namespace SolidJson
         /// returned can be used as a root node or added to another
         /// document later.
         /// </summary>
-        /// <param name="parent"></param>
         /// <returns></returns>
-        IJsonObject New(object parent = null);
+        IJsonObject New();
 
         /// <summary>
         /// Constructs a new JsonObject and converts it to
@@ -33,9 +32,8 @@ namespace SolidJson
         /// according to the "EmitDefaultValue" setting
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="parent"></param>
         /// <returns></returns>
-        T New<T>(object parent = null);
+        T New<T>();
 
         /// <summary>
         /// Constructs data from supplied struct
@@ -48,19 +46,17 @@ namespace SolidJson
         /// <summary>
         /// Creates a IJsonStruct from supplied data.
         /// </summary>
-        /// <param name="parent"></param>
         /// <param name="dataType"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        IJsonStruct CreateJsonStruct(object parent, Type dataType, object data);
+        IJsonStruct CreateJsonStruct(Type dataType, object data);
 
         /// <summary>
         /// Creates a new json struct.
         /// </summary>
-        /// <param name="parent"></param>
         /// <param name="dataType"></param>
         /// <returns></returns>
-        IJsonStruct CreateNewJsonStruct(object parent, Type dataType);
+        IJsonStruct CreateNewJsonStruct(Type dataType);
 
         /// <summary>
         /// Returns true if supplied data is default value for specified type.

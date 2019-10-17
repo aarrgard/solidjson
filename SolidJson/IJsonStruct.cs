@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,6 +9,11 @@ namespace SolidJson
     /// </summary>
     public interface IJsonStruct
     {
+        /// <summary>
+        /// Returns the factory that this structure belongs to.
+        /// </summary>
+        IJsonFactory Factory { get; }
+
         /// <summary>
         /// Returns the parent structure.
         /// </summary>

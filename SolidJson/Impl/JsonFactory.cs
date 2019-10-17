@@ -98,11 +98,10 @@ namespace SolidJson.Impl
         /// <summary>
         /// Constructs a new instance
         /// </summary>
-        /// <param name="parent"></param>
         /// <returns></returns>
-        public IJsonObject New(object parent = null)
+        public IJsonObject New()
         {
-            return new JsonObject(parent ?? this);
+            return new JsonObject(this);
         }
 
         /// <summary>
@@ -110,12 +109,11 @@ namespace SolidJson.Impl
         /// according to the "EmitDefaultValue" setting
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="parent"></param>
         /// <returns></returns>
-        public T New<T>(object parent = null)
+        public T New<T>()
         {
 
-            var proxy = new JsonObject(parent ?? this).As<T>();
+            var proxy = new JsonObject(this).As<T>();
             ObjectProxy<T>.SetDefaultValues(proxy);
             return proxy;
         }
@@ -137,9 +135,9 @@ namespace SolidJson.Impl
             return TypeHandlers.GetOrAdd(GetPropertyType(dataType, data), CreateTypeHandler).IsDefaultValue(data);
         }
 
-        IJsonStruct IJsonFactory.CreateJsonStruct(object parent, Type dataType, object data)
+        IJsonStruct IJsonFactory.CreateJsonStruct(Type dataType, object data)
         {
-            return TypeHandlers.GetOrAdd(GetPropertyType(dataType, data), CreateTypeHandler).CreateJsonStruct(parent, data);
+            return TypeHandlers.GetOrAdd(GetPropertyType(dataType, data), CreateTypeHandler).CreateJsonStruct(this, data);
         }
 
         object IJsonFactory.CreateData(JsonStruct jsonStruct, Type dataType)
@@ -147,9 +145,9 @@ namespace SolidJson.Impl
             return TypeHandlers.GetOrAdd(GetPropertyType(dataType, null), CreateTypeHandler).CreateType(jsonStruct);
         }
 
-        IJsonStruct IJsonFactory.CreateNewJsonStruct(object parent, Type dataType)
+        IJsonStruct IJsonFactory.CreateNewJsonStruct(Type dataType)
         {
-            return TypeHandlers.GetOrAdd(GetPropertyType(dataType, null), CreateTypeHandler).CreateNewJsonStruct(parent);
+            return TypeHandlers.GetOrAdd(GetPropertyType(dataType, null), CreateTypeHandler).CreateNewJsonStruct(this);
         }
     }
 }

@@ -14,8 +14,8 @@ namespace SolidJson.Impl
         /// <summary>
         /// Constructs a new instance
         /// </summary>
-        /// <param name="parent"></param>
-        public JsonFloat(object parent) : base(parent)
+        /// <param name="factory"></param>
+        public JsonFloat(IJsonFactory factory) : base(factory)
         {
         }
 

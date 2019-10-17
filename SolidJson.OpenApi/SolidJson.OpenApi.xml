@@ -98,5 +98,203 @@
             REQUIRED. Provides metadata about the API. The metadata MAY be used by tooling as required.
             </summary>
         </member>
+        <member name="P:SolidJson.OpenApi.V3.IOpenAPI.Servers">
+            <summary>
+            An array of Server Objects, which provide connectivity information to a target server. If the servers property is not provided, or is an empty array, the default value would be a Server Object with a url value of /.    /// </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IOpenAPI.Paths">
+            <summary>
+            REQUIRED. The available paths and operations for the API.
+            </summary>
+        </member>
+        <member name="T:SolidJson.OpenApi.V3.IOperation">
+            <summary>
+            
+            </summary>
+            <a href="https://swagger.io/specification/#parameterObject">see</a>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IOperation.Tags">
+            <summary>
+            A list of tags for API documentation control. Tags can be used for logical grouping of operations by resources or any other qualifier.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IOperation.Summary">
+            <summary>
+            A short summary of what the operation does.	A short summary of what the operation does.	A short summary of what the operation does.	A short summary of what the operation does.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IOperation.Description">
+            <summary>
+            A verbose explanation of the operation behavior. CommonMark syntax MAY be used for rich text representation.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IOperation.ExternalDocs">
+            <summary>
+            Additional external documentation for this operation.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IOperation.OperationId">
+            <summary>
+            Unique string used to identify the operation. The id MUST be unique among all operations described in the API. The operationId value is case-sensitive. Tools and libraries MAY use the operationId to uniquely identify an operation, therefore, it is RECOMMENDED to follow common programming naming conventions.
+            </summary>
+        </member>
+        <member name="T:SolidJson.OpenApi.V3.IParameter">
+             <summary>
+             Describes a single operation parameter.
+            
+             A unique parameter is defined by a combination of a name and location.
+            
+             Parameter Locations
+             There are four possible parameter locations specified by the in field:
+            
+             path - Used together with Path Templating, where the parameter value is actually part of the operation's URL. This does not include the host or base path of the API. For example, in /items/{itemId}, the path parameter is itemId.
+             query - Parameters that are appended to the URL.For example, in /items? id =###, the query parameter is id.
+             header - Custom headers that are expected as part of the request.Note that RFC7230 states header names are case insensitive.
+             cookie - Used to pass a specific cookie value to the API.
+             </summary>
+             <a href="https://swagger.io/specification/#parameterObject">see</a>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IParameter.name">
+            <summary>
+            REQUIRED.The name of the parameter. Parameter names are case sensitive.
+            If in is "path", the name field MUST correspond to the associated path segment from the path field in the Paths Object.See Path Templating for further information.
+            If in is "header" and the name field is "Accept", "Content-Type" or "Authorization", the parameter definition SHALL be ignored.
+            For all other cases, the name corresponds to the parameter name used by the in property.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IParameter.In">
+            <summary>
+            REQUIRED. The location of the parameter.Possible values are "query", "header", "path" or "cookie".
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IParameter.Description">
+            <summary>
+            A brief description of the parameter.This could contain examples of use. CommonMark syntax MAY be used for rich text representation.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IParameter.Required">
+            <summary>
+            Determines whether this parameter is mandatory.If the parameter location is "path", this property is REQUIRED and its value MUST be true. Otherwise, the property MAY be included and its default value is false.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IParameter.Deprecated">
+            <summary>
+            Specifies that a parameter is deprecated and SHOULD be transitioned out of usage. Default value is false.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IParameter.AllowEmptyValue">
+            <summary>
+            Sets the ability to pass empty-valued parameters. This is valid only for query parameters and allows sending a parameter with an empty value.Default value is false. If style is used, and if behavior is n/a (cannot be serialized), the value of allowEmptyValue SHALL be ignored.Use of this property is NOT RECOMMENDED, as it is likely to be removed in a later revision.
+            </summary>
+        </member>
+        <member name="T:SolidJson.OpenApi.V3.IPathItem">
+            <summary>
+            Holds the relative paths to the individual endpoints and their operations. The path is appended to the URL from the Server Object in order to construct the full URL. The Paths MAY be empty, due to ACL constraints.
+            </summary>
+            <a href="https://swagger.io/specification/#pathItemObject">see</a>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Ref">
+            <summary>
+            Allows for an external definition of this path item. The referenced structure MUST be in the format of a Path Item Object.If there are conflicts between the referenced definition and this Path Item's definition, the behavior is undefined.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Summary">
+            <summary>
+            An optional, string summary, intended to apply to all operations in this path.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Description">
+            <summary>
+            An optional, string description, intended to apply to all operations in this path.CommonMark syntax MAY be used for rich text representation.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Get">
+            <summary>
+            Object A definition of a GET operation on this path.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Delete">
+            <summary>
+            Object A definition of a DELETE operation on this path.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Options">
+            <summary>
+            Object A definition of a OPTIONS operation on this path.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Head">
+            <summary>
+            Object A definition of a HEAD operation on this path.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Trace">
+            <summary>
+            Object A definition of a TRACE operation on this path.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Servers">
+            <summary>
+            An alternative server array to service all operations in this path.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPathItem.Parameters">
+            <summary>
+            A list of parameters that are applicable for all the operations described under this path.These parameters can be overridden at the operation level, but cannot be removed there.The list MUST NOT include duplicated parameters.A unique parameter is defined by a combination of a name and location.The list can use the Reference Object to link to parameters that are defined at the OpenAPI Object's components/parameters.
+            </summary>
+        </member>
+        <member name="T:SolidJson.OpenApi.V3.IPaths">
+            <summary>
+            Holds the relative paths to the individual endpoints and their operations. The path is appended to the URL from the Server Object in order to construct the full URL. The Paths MAY be empty, due to ACL constraints.
+            </summary>
+            <a href="https://swagger.io/specification/#pathsObject">see</a>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IPaths.Item(System.String)">
+            <summary>
+            A relative path to an individual endpoint. The field name MUST begin with a slash. The path is appended (no relative URL resolution) to the expanded URL from the Server Object's url field in order to construct the full URL. Path templating is allowed. When matching URLs, concrete (non-templated) paths would be matched before their templated counterparts. Templated paths with the same hierarchy but different templated names MUST NOT exist as they are identical. In case of ambiguous matching, it's up to the tooling to decide which one to use.
+            </summary>
+        </member>
+        <member name="T:SolidJson.OpenApi.V3.IServer">
+            <summary>
+            An object representing a Server.
+            </summary>
+            <a href="https://swagger.io/specification/#serverObject">see</a>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IServer.Url">
+            <summary>
+            REQUIRED.A URL to the target host.This URL supports Server Variables and MAY be relative, to indicate that the host location is relative to the location where the OpenAPI document is being served. Variable substitutions will be made when a variable is named in { brackets}.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IServer.Description">
+            <summary>
+            An optional string describing the host designated by the URL.CommonMark syntax MAY be used for rich text representation.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IServer.Variables">
+            <summary>
+            A map between a variable name and its value.The value is used for substitution in the server's URL template.
+            </summary>
+        </member>
+        <member name="T:SolidJson.OpenApi.V3.IServerVariable">
+            <summary>
+            An object representing a Server Variable for server URL template substitution.
+            </summary>
+            <a href="https://swagger.io/specification/#serverVariableObject">see</a>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IServerVariable.Enum">
+            <summary>
+            An enumeration of string values to be used if the substitution options are from a limited set.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IServerVariable.Default">
+            <summary>
+            REQUIRED. The default value to use for substitution, which SHALL be sent if an alternate value is not supplied. Note this behavior is different than the Schema Object's treatment of default values, because in those cases parameter values are optional.
+            </summary>
+        </member>
+        <member name="P:SolidJson.OpenApi.V3.IServerVariable.Description">
+            <summary>
+            An optional description for the server variable. CommonMark syntax MAY be used for rich text representation.
+            </summary>
+        </member>
     </members>
 </doc>

@@ -93,9 +93,10 @@ namespace SolidRpc.Tests.Json
         {
             var jo = Factory.New<ITestInterfaceEmitArrayDefaultValueTrue>();
             Assert.AreEqual("{\"d\":[]}", ((IJsonStruct)jo).AsJson());
-            var nestedJo = Factory.New<ITestInterfaceEmitArrayDefaultValueTrue>(jo);
+            var nestedJo = Factory.New<ITestInterfaceEmitArrayDefaultValueTrue>();
             Assert.AreEqual("{\"d\":[]}", ((IJsonStruct)nestedJo).AsJson());
             jo.Data = new[] { nestedJo };
+            Assert.AreEqual(1, jo.Data.Count());
             Assert.AreEqual("{\"d\":[]}", ((IJsonStruct)jo.Data.First()).AsJson());
             Assert.AreEqual("{\"d\":[{\"d\":[]}]}", ((IJsonStruct)jo).AsJson());
         }

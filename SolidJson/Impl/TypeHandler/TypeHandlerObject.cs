@@ -8,7 +8,7 @@ namespace SolidJson.Impl.TypeHandler
     }
     public class TypeHandlerObject<T> : TypeHandlerBase<T>
     {
-        public override IJsonStruct CreateJsonStruct(object parent, object data)
+        public override IJsonStruct CreateJsonStruct(IJsonFactory factory, object data)
         {
             if (data == null)
             {
@@ -18,13 +18,13 @@ namespace SolidJson.Impl.TypeHandler
             {
                 return jo.RawStruct;
             }
-            return new JsonObject((IJsonStruct)parent) {};
+            return new JsonObject(factory) {};
 
         }
 
-        public override IJsonStruct CreateNewJsonStruct(object parent)
+        public override IJsonStruct CreateNewJsonStruct(IJsonFactory factory)
         {
-            return new JsonObject((IJsonStruct)parent);
+            return new JsonObject(factory);
         }
 
         public override T CreateType(IJsonStruct jsonStruct)

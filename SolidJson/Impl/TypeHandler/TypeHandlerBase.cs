@@ -28,10 +28,10 @@ namespace SolidJson.Impl.TypeHandler
         /// <summary>
         /// Creates the json struct
         /// </summary>
-        /// <param name="parent"></param>
+        /// <param name="factory"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        public abstract IJsonStruct CreateJsonStruct(object parent, object data);
+        public abstract IJsonStruct CreateJsonStruct(IJsonFactory factory, object data);
 
         /// <summary>
         /// Determines if supplied value is the default value.
@@ -43,8 +43,8 @@ namespace SolidJson.Impl.TypeHandler
         /// <summary>
         /// Creates a new struct.
         /// </summary>
-        /// <param name="parent"></param>
+        /// <param name="factory"></param>
         /// <returns></returns>
-        public abstract IJsonStruct CreateNewJsonStruct(object parent);
+        public abstract IJsonStruct CreateNewJsonStruct(IJsonFactory factory);
     }
 }

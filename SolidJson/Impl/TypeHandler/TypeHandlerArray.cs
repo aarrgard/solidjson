@@ -12,14 +12,14 @@ namespace SolidJson.Impl.TypeHandler
 
         private IJsonTypeHandler<TElem> ElementTypeHandler { get; }
 
-        public override IJsonStruct CreateJsonStruct(object parent, object data)
+        public override IJsonStruct CreateJsonStruct(IJsonFactory factory, object data)
         {
-            var jsonArr = new JsonArray((IJsonStruct)parent);
+            var jsonArr = new JsonArray(factory);
             if (data != null)
             {
                 foreach (var e in ((IEnumerable<TElem>)data))
                 {
-                    jsonArr.Add(ElementTypeHandler.CreateJsonStruct(jsonArr, e));
+                    jsonArr.Add(ElementTypeHandler.CreateJsonStruct(factory, e));
                 }
             }
             return jsonArr;
@@ -27,20 +27,12 @@ namespace SolidJson.Impl.TypeHandler
 
         public override TArr CreateType(IJsonStruct jsonStruct)
         {
-            var elements = new List<TElem>();
-            if(jsonStruct != null)
-            {
-                if(jsonStruct is IJsonArray jsonArray)
-                {
-                    jsonArray.ToList().ForEach(o => elements.Add(ElementTypeHandler.CreateType(o)));
-                }
-            }
-            return (TArr)(object)elements;
+            return (TArr)(object)new ArrayProxy<TElem>((IJsonArray)jsonStruct);
         }
 
-        public override IJsonStruct CreateNewJsonStruct(object parent)
+        public override IJsonStruct CreateNewJsonStruct(IJsonFactory factory)
         {
-            return new JsonArray((IJsonStruct)parent);
+            return new JsonArray(factory);
         }
 
         public override bool IsDefaultValue(object value)

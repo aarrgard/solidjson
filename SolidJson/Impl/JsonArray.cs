@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,8 +15,8 @@ namespace SolidJson.Impl
         /// <summary>
         /// Constructs a new instance
         /// </summary>
-        /// <param name="parent"></param>
-        public JsonArray(object parent) : base(parent)
+        /// <param name="factory"></param>
+        public JsonArray(IJsonFactory factory) : base(factory)
         {
             Elements = new List<IJsonStruct>();
         }
@@ -39,7 +38,19 @@ namespace SolidJson.Impl
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public IJsonStruct this[int index] { get => Elements[index]; set => Elements[index] = value; }
+        public IJsonStruct this[int index]
+        {
+            get
+            {
+                return Elements[index];
+            }
+            set
+            {
+                RemoveParent(Elements[index]);
+                SetParent(value);
+                Elements[index] = value;
+            }
+        }
 
         /// <summary>
         /// Returns the enumerator
@@ -72,6 +83,7 @@ namespace SolidJson.Impl
         /// <param name="item"></param>
         public void Insert(int index, IJsonStruct item)
         {
+            SetParent(item);
             Elements.Insert(index, item);
         }
 
@@ -81,6 +93,7 @@ namespace SolidJson.Impl
         /// <param name="index"></param>
         public void RemoveAt(int index)
         {
+            RemoveParent(Elements[index]);
             Elements.RemoveAt(index);
         }
 
@@ -90,6 +103,7 @@ namespace SolidJson.Impl
         /// <param name="item"></param>
         public void Add(IJsonStruct item)
         {
+            SetParent(item);
             Elements.Add(item);
         }
 
@@ -98,6 +112,7 @@ namespace SolidJson.Impl
         /// </summary>
         public void Clear()
         {
+            Elements.ToList().ForEach(o => RemoveParent(o));
             Elements.Clear();
         }
 
@@ -128,6 +143,7 @@ namespace SolidJson.Impl
         /// <returns></returns>
         public bool Remove(IJsonStruct item)
         {
+            RemoveParent(item);
             return Elements.Remove(item);
         }
 

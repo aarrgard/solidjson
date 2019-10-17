@@ -65,7 +65,7 @@ namespace SolidRpc.Tests.Json
             jo.TestString = "testing";
             jo.ChildObjects = new[]
             {
-                Factory.New<ITestInterface>((IJsonStruct)jo)
+                Factory.New<ITestInterface>()
             };
             Assert.AreEqual("{\"test-string\":\"testing\",\"children\":[{\"test-string\":null,\"children\":[]}]}", ((IJsonStruct)jo).AsJson());
         }

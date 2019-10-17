@@ -10,16 +10,21 @@ namespace SolidJson.Impl
     /// </summary>
     public abstract class JsonStruct : IJsonStruct
     {
-        private readonly object _parent;
+        private IJsonStruct _parent;
 
         /// <summary>
         /// Constructs a new instance
         /// </summary>
-        /// <param name="parent"></param>
-        public JsonStruct(object parent)
+        /// <param name="factory"></param>
+        public JsonStruct(IJsonFactory factory)
         {
-            _parent = parent ?? throw new ArgumentNullException(nameof(parent));
+            Factory = factory;
         }
+
+        /// <summary>
+        /// The factory
+        /// </summary>
+        public IJsonFactory Factory { get; }
 
         /// <summary>
         /// The parent structure
@@ -38,7 +43,7 @@ namespace SolidJson.Impl
         /// <returns></returns>
         public T As<T>()
         {
-            return (T)GetParent<IJsonFactory>().CreateData(this, typeof(T));
+            return (T)Factory.CreateData(this, typeof(T));
         }
 
         /// <summary>
@@ -48,7 +53,7 @@ namespace SolidJson.Impl
         /// <returns></returns>
         public object As(Type type)
         {
-            return GetParent<IJsonFactory>().CreateData(this, type);
+            return Factory.CreateData(this, type);
         }
 
         /// <summary>
@@ -57,11 +62,10 @@ namespace SolidJson.Impl
         /// <returns></returns>
         public string AsJson(bool pretty)
         {
-            var jsonFactory = GetParent<IJsonFactory>();
             var sw = new StringWriter();
             using (sw)
             {
-                using (var jw = jsonFactory.JsonWriterFactory.CreateWriter(sw, pretty))
+                using (var jw = Factory.JsonWriterFactory.CreateWriter(sw, pretty))
                 {
                     WriteAsync(jw).Wait();
                 }
@@ -109,6 +113,29 @@ namespace SolidJson.Impl
             }
             convertedValue = null;
             return false;
+        }
+
+        /// <summary>
+        /// Sets the parent of supplied structure to this object
+        /// </summary>
+        /// <param name="value"></param>
+        protected void SetParent(IJsonStruct value)
+        {
+            if (value == null) return;
+            ((JsonStruct)value)._parent = this;
+        }
+
+        /// <summary>
+        /// Sets the parent of supplied value to null if this 
+        /// node is the current parent.
+        /// </summary>
+        /// <param name="value"></param>
+        protected void RemoveParent(IJsonStruct value)
+        {
+            if(ReferenceEquals(((JsonStruct)value)._parent,this))
+            {
+                ((JsonStruct)value)._parent = null;
+            }
         }
     }
 }

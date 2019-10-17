@@ -34,23 +34,21 @@
             The writer factory
             </summary>
         </member>
-        <member name="M:SolidJson.IJsonFactory.New(System.Object)">
+        <member name="M:SolidJson.IJsonFactory.New">
             <summary>
             Constructs a new JsonObject instance. The instance
             returned can be used as a root node or added to another
             document later.
             </summary>
-            <param name="parent"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidJson.IJsonFactory.New``1(System.Object)">
+        <member name="M:SolidJson.IJsonFactory.New``1">
             <summary>
             Constructs a new JsonObject and converts it to
             the specified type. Populates the underlying structure
             according to the "EmitDefaultValue" setting
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="parent"></param>
             <returns></returns>
         </member>
         <member name="M:SolidJson.IJsonFactory.CreateData(SolidJson.Impl.JsonStruct,System.Type)">
@@ -61,20 +59,18 @@
             <param name="dataType"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidJson.IJsonFactory.CreateJsonStruct(System.Object,System.Type,System.Object)">
+        <member name="M:SolidJson.IJsonFactory.CreateJsonStruct(System.Type,System.Object)">
             <summary>
             Creates a IJsonStruct from supplied data.
             </summary>
-            <param name="parent"></param>
             <param name="dataType"></param>
             <param name="data"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidJson.IJsonFactory.CreateNewJsonStruct(System.Object,System.Type)">
+        <member name="M:SolidJson.IJsonFactory.CreateNewJsonStruct(System.Type)">
             <summary>
             Creates a new json struct.
             </summary>
-            <param name="parent"></param>
             <param name="dataType"></param>
             <returns></returns>
         </member>
@@ -194,6 +190,11 @@
             base class for all Json strutures
             </summary>
         </member>
+        <member name="P:SolidJson.IJsonStruct.Factory">
+            <summary>
+            Returns the factory that this structure belongs to.
+            </summary>
+        </member>
         <member name="P:SolidJson.IJsonStruct.Parent">
             <summary>
             Returns the parent structure.
@@ -250,18 +251,18 @@
             Returns the type handled.
             </summary>
         </member>
-        <member name="M:SolidJson.IJsonTypeHandler.CreateNewJsonStruct(System.Object)">
+        <member name="M:SolidJson.IJsonTypeHandler.CreateNewJsonStruct(SolidJson.IJsonFactory)">
             <summary>
             Creates a default json struct for this type(not null)
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidJson.IJsonTypeHandler.CreateJsonStruct(System.Object,System.Object)">
+        <member name="M:SolidJson.IJsonTypeHandler.CreateJsonStruct(SolidJson.IJsonFactory,System.Object)">
             <summary>
             Creates a JsonStruct for supplied data
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
             <param name="data"></param>
             <returns></returns>
         </member>
@@ -374,16 +375,22 @@
             <param name="pretty"></param>
             <returns></returns>
         </member>
+        <member name="T:SolidJson.Impl.ArrayProxy`1">
+            <summary>
+            Implements a proxy for the JsonArray.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
         <member name="T:SolidJson.Impl.JsonArray">
             <summary>
             Represents a Json array.
             </summary>
         </member>
-        <member name="M:SolidJson.Impl.JsonArray.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonArray.#ctor(SolidJson.IJsonFactory)">
             <summary>
             Constructs a new instance
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
         </member>
         <member name="P:SolidJson.Impl.JsonArray.Count">
             <summary>
@@ -472,11 +479,11 @@
             Represents a Json boolean.
             </summary>
         </member>
-        <member name="M:SolidJson.Impl.JsonBoolean.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonBoolean.#ctor(SolidJson.IJsonFactory)">
             <summary>
             Constructs a new instance
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
         </member>
         <member name="P:SolidJson.Impl.JsonBoolean.Boolean">
             <summary>
@@ -508,20 +515,18 @@
             Constructs a new instance
             </summary>
         </member>
-        <member name="M:SolidJson.Impl.JsonFactory.New(System.Object)">
+        <member name="M:SolidJson.Impl.JsonFactory.New">
             <summary>
             Constructs a new instance
             </summary>
-            <param name="parent"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidJson.Impl.JsonFactory.New``1(System.Object)">
+        <member name="M:SolidJson.Impl.JsonFactory.New``1">
             <summary>
             Constucts a new instance. Populates the underlying structure
             according to the "EmitDefaultValue" setting
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="parent"></param>
             <returns></returns>
         </member>
         <member name="T:SolidJson.Impl.JsonFloat">
@@ -529,11 +534,11 @@
             Represents a Json float.
             </summary>
         </member>
-        <member name="M:SolidJson.Impl.JsonFloat.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonFloat.#ctor(SolidJson.IJsonFactory)">
             <summary>
             Constructs a new instance
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
         </member>
         <member name="P:SolidJson.Impl.JsonFloat.Float">
             <summary>
@@ -560,11 +565,11 @@
             Represents a Json integer.
             </summary>
         </member>
-        <member name="M:SolidJson.Impl.JsonInteger.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonInteger.#ctor(SolidJson.IJsonFactory)">
             <summary>
             Constructs a new instance
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
         </member>
         <member name="P:SolidJson.Impl.JsonInteger.Integer">
             <summary>
@@ -591,11 +596,11 @@
             Represents a Json object.
             </summary>
         </member>
-        <member name="M:SolidJson.Impl.JsonObject.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonObject.#ctor(SolidJson.IJsonFactory)">
             <summary>
             Constructs a new instance
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
         </member>
         <member name="P:SolidJson.Impl.JsonObject.Item(System.String)">
             <summary>
@@ -665,11 +670,11 @@
             Represents a Json string.
             </summary>
         </member>
-        <member name="M:SolidJson.Impl.JsonString.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonString.#ctor(SolidJson.IJsonFactory)">
             <summary>
             Constructs a new instance
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
         </member>
         <member name="P:SolidJson.Impl.JsonString.String">
             <summary>
@@ -696,11 +701,16 @@
             Represents a Json object.
             </summary>
         </member>
-        <member name="M:SolidJson.Impl.JsonStruct.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonStruct.#ctor(SolidJson.IJsonFactory)">
             <summary>
             Constructs a new instance
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
+        </member>
+        <member name="P:SolidJson.Impl.JsonStruct.Factory">
+            <summary>
+            The factory
+            </summary>
         </member>
         <member name="P:SolidJson.Impl.JsonStruct.Parent">
             <summary>
@@ -753,6 +763,19 @@
             <param name="toType"></param>
             <param name="convertedValue"></param>
             <returns></returns>
+        </member>
+        <member name="M:SolidJson.Impl.JsonStruct.SetParent(SolidJson.IJsonStruct)">
+            <summary>
+            Sets the parent of supplied structure to this object
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:SolidJson.Impl.JsonStruct.RemoveParent(SolidJson.IJsonStruct)">
+            <summary>
+            Sets the parent of supplied value to null if this 
+            node is the current parent.
+            </summary>
+            <param name="value"></param>
         </member>
         <member name="T:SolidJson.Impl.JsonWriter">
             <summary>
@@ -880,11 +903,11 @@
             <param name="jsonStruct"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.CreateJsonStruct(System.Object,System.Object)">
+        <member name="M:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.CreateJsonStruct(SolidJson.IJsonFactory,System.Object)">
             <summary>
             Creates the json struct
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
             <param name="data"></param>
             <returns></returns>
         </member>
@@ -895,11 +918,11 @@
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.CreateNewJsonStruct(System.Object)">
+        <member name="M:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.CreateNewJsonStruct(SolidJson.IJsonFactory)">
             <summary>
             Creates a new struct.
             </summary>
-            <param name="parent"></param>
+            <param name="factory"></param>
             <returns></returns>
         </member>
         <member name="T:SolidJson.JsonToken">

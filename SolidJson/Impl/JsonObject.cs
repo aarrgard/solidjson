@@ -23,8 +23,8 @@ namespace SolidJson.Impl
         /// <summary>
         /// Constructs a new instance
         /// </summary>
-        /// <param name="parent"></param>
-        public JsonObject(object parent) : base(parent)
+        /// <param name="factory"></param>
+        public JsonObject(IJsonFactory factory) : base(factory)
         {
             Properties = new Dictionary<string, IJsonStruct>();
         }

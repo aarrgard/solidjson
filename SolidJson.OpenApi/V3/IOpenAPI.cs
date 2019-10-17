@@ -22,5 +22,16 @@ namespace SolidJson.OpenApi.V3
         /// </summary>
         [DataMember(Name = "info", IsRequired = true, EmitDefaultValue = true)]
         IInfo Info { get; set; }
+
+        /// <summary>
+        /// An array of Server Objects, which provide connectivity information to a target server. If the servers property is not provided, or is an empty array, the default value would be a Server Object with a url value of /.    /// </summary>
+        [DataMember(Name = "servers", IsRequired = false, EmitDefaultValue = false)]
+        ICollection<IServer> Servers { get; set; }
+
+        /// <summary>
+        /// REQUIRED. The available paths and operations for the API.
+        /// </summary>
+        [DataMember(Name = "paths", IsRequired = true, EmitDefaultValue = true)]
+        IPaths Paths { get; set; }
     }
 }

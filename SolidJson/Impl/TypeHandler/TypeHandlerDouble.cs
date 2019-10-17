@@ -6,16 +6,16 @@ namespace SolidJson.Impl.TypeHandler
 {
     public class TypeHandlerDouble : TypeHandlerBase<double>
     {
-        public override IJsonStruct CreateJsonStruct(object parent, object data)
+        public override IJsonStruct CreateJsonStruct(IJsonFactory factory, object data)
         {
             if (data == null) return null;
-            return new JsonFloat(parent) { Float = (double)data };
+            return new JsonFloat(factory) { Float = (double)data };
 
         }
 
-        public override IJsonStruct CreateNewJsonStruct(object parent)
+        public override IJsonStruct CreateNewJsonStruct(IJsonFactory factory)
         {
-            return new JsonFloat(parent);
+            return new JsonFloat(factory);
         }
 
         public override double CreateType(IJsonStruct jsonStruct)
