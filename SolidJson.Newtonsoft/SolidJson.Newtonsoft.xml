@@ -4,24 +4,24 @@
         <name>SolidJson.Newtonsoft</name>
     </assembly>
     <members>
-        <member name="T:SolidRpc.Json.Newtonsoft.JsonReaderFactory">
+        <member name="T:SolidJson.Newtonsoft.JsonReaderFactory">
             <summary>
             Factory that creates json reader using the newtonsoft reader.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Newtonsoft.JsonReaderFactory.CreateReader(System.IO.TextReader)">
+        <member name="M:SolidJson.Newtonsoft.JsonReaderFactory.CreateReader(System.IO.TextReader)">
             <summary>
             Creates the reader
             </summary>
             <param name="tr"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.Newtonsoft.JsonWriterFactory">
+        <member name="T:SolidJson.Newtonsoft.JsonWriterFactory">
             <summary>
             Factory that creates json writer using the newtonsoft writer.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Newtonsoft.JsonWriterFactory.CreateWriter(System.IO.TextWriter,System.Boolean)">
+        <member name="M:SolidJson.Newtonsoft.JsonWriterFactory.CreateWriter(System.IO.TextWriter,System.Boolean)">
             <summary>
             Creates the writer
             </summary>

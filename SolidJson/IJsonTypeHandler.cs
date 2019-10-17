@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolidRpc.Json
+namespace SolidJson
 {
     /// <summary>
     /// Interface that all the type handlers must conform to.

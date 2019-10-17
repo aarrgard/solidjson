@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace SolidRpc.Json.OpenApi.V3
+namespace SolidJson.OpenApi.V3
 {
     /// <summary>
     /// Contact information for the exposed API.

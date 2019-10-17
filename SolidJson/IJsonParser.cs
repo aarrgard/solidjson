@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SolidRpc.Json
+namespace SolidJson
 {
     /// <summary>
     /// The parser parses strings and streams into Json structures

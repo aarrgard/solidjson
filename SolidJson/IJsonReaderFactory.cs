@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace SolidRpc.Json
+namespace SolidJson
 {
     /// <summary>
     /// The factory that creates json readers

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SolidRpc.Json.Impl
+namespace SolidJson.Impl
 {
     /// <summary>
     /// Represents a json factory.

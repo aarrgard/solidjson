@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
-using SolidRpc.Json;
-using SolidRpc.Json.OpenApi.V3;
+using SolidJson;
+using SolidJson.OpenApi.V3;
 using System.IO;
 using System.Threading.Tasks;
 

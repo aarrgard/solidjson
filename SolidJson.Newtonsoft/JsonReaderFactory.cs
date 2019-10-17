@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.IO;
 
-namespace SolidRpc.Json.Newtonsoft
+namespace SolidJson.Newtonsoft
 {
     /// <summary>
     /// Factory that creates json reader using the newtonsoft reader.

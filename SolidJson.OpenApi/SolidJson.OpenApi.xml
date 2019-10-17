@@ -4,96 +4,96 @@
         <name>SolidJson.OpenApi</name>
     </assembly>
     <members>
-        <member name="T:SolidRpc.Json.OpenApi.V2.ISwaggerObject">
+        <member name="T:SolidJson.OpenApi.V2.ISwaggerObject">
             <summary>
             Represents a swagger object
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.OpenApi.V3.IContact">
+        <member name="T:SolidJson.OpenApi.V3.IContact">
             <summary>
             Contact information for the exposed API.
             </summary>
             <a href="https://swagger.io/specification/#contactObject">see</a>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IContact.Name">
+        <member name="P:SolidJson.OpenApi.V3.IContact.Name">
             <summary>
             The identifying name of the contact person/organization.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IContact.Url">
+        <member name="P:SolidJson.OpenApi.V3.IContact.Url">
             <summary>
             The URL pointing to the contact information.MUST be in the format of a URL.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IContact.Email">
+        <member name="P:SolidJson.OpenApi.V3.IContact.Email">
             <summary>
             The email address of the contact person/organization.MUST be in the format of an email address.
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.OpenApi.V3.IInfo">
+        <member name="T:SolidJson.OpenApi.V3.IInfo">
             <summary>
             The object provides metadata about the API. The metadata MAY be used by the clients if needed, and MAY be presented in editing or documentation generation tools for convenience.   
             </summary>
             <a href="https://swagger.io/specification/#infoObject">see</a>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IInfo.Title">
+        <member name="P:SolidJson.OpenApi.V3.IInfo.Title">
             <summary>
             REQUIRED. The title of the application.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IInfo.Description">
+        <member name="P:SolidJson.OpenApi.V3.IInfo.Description">
             <summary>
             A short description of the application.CommonMark syntax MAY be used for rich text representation.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IInfo.TermsOfService">
+        <member name="P:SolidJson.OpenApi.V3.IInfo.TermsOfService">
             <summary>
             A URL to the Terms of Service for the API.MUST be in the format of a URL.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IInfo.Contact">
+        <member name="P:SolidJson.OpenApi.V3.IInfo.Contact">
             <summary>
             Contact Object The contact information for the exposed API.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IInfo.License">
+        <member name="P:SolidJson.OpenApi.V3.IInfo.License">
             <summary>
             License Object The license information for the exposed API.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IInfo.Version">
+        <member name="P:SolidJson.OpenApi.V3.IInfo.Version">
             <summary>
             REQUIRED. The version of the OpenAPI document (which is distinct from the OpenAPI Specification version or the API implementation version).
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.OpenApi.V3.ILicense">
+        <member name="T:SolidJson.OpenApi.V3.ILicense">
             <summary>
             License information for the exposed API.
             </summary>
             <a href="https://swagger.io/specification/#licenseObject">see</a>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.ILicense.Name">
+        <member name="P:SolidJson.OpenApi.V3.ILicense.Name">
             <summary>
             REQUIRED.The license name used for the API.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.ILicense.Url">
+        <member name="P:SolidJson.OpenApi.V3.ILicense.Url">
             <summary>
             A URL to the license used for the API. MUST be in the format of a URL.
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.OpenApi.V3.IOpenAPI">
+        <member name="T:SolidJson.OpenApi.V3.IOpenAPI">
             <summary>
             This is the root document object of the OpenAPI document.
             </summary>
             <a href="https://swagger.io/specification/#oasObject">see</a>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IOpenAPI.OpenAPI">
+        <member name="P:SolidJson.OpenApi.V3.IOpenAPI.OpenAPI">
             <summary>
             REQUIRED. This string MUST be the semantic version number of the OpenAPI Specification version that the OpenAPI document uses. The openapi field SHOULD be used by tooling specifications and clients to interpret the OpenAPI document. This is not related to the API info.version string.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.OpenApi.V3.IOpenAPI.Info">
+        <member name="P:SolidJson.OpenApi.V3.IOpenAPI.Info">
             <summary>
             REQUIRED. Provides metadata about the API. The metadata MAY be used by tooling as required.
             </summary>

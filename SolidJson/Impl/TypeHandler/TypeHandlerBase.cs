@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SolidRpc.Json.Impl.TypeHandler
+namespace SolidJson.Impl.TypeHandler
 {
     /// <summary>
     /// Base class for a type handler.

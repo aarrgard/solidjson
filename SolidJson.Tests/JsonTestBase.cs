@@ -1,6 +1,6 @@
-﻿using SolidRpc.Json;
-using SolidRpc.Json.Impl;
-using SolidRpc.Json.Newtonsoft;
+﻿using SolidJson;
+using SolidJson.Impl;
+using SolidJson.Newtonsoft;
 
 namespace SolidRpc.Tests.Json
 {

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace SolidRpc.Json.OpenApi.V3
+namespace SolidJson.OpenApi.V3
 {
     /// <summary>
     /// License information for the exposed API.

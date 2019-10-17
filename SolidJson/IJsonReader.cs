@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SolidRpc.Json
+namespace SolidJson
 {
     /// <summary>
     /// This is the reader that reads json tokens.

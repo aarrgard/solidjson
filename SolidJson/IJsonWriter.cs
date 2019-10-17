@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SolidRpc.Json
+namespace SolidJson
 {
     /// <summary>
     /// Interface to emit json objects to.

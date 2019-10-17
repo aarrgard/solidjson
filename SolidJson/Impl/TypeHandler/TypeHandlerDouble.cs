@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolidRpc.Json.Impl.TypeHandler
+namespace SolidJson.Impl.TypeHandler
 {
     public class TypeHandlerDouble : TypeHandlerBase<double>
     {

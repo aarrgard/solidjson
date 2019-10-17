@@ -4,37 +4,37 @@
         <name>SolidJson</name>
     </assembly>
     <members>
-        <member name="T:SolidRpc.Json.IJsonArray">
+        <member name="T:SolidJson.IJsonArray">
             <summary>
             Represents a Json array
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.IJsonBoolean">
+        <member name="T:SolidJson.IJsonBoolean">
             <summary>
             Represents a Json string
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonBoolean.Boolean">
+        <member name="P:SolidJson.IJsonBoolean.Boolean">
             <summary>
             Gets/sets the boolean value
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.IJsonFactory">
+        <member name="T:SolidJson.IJsonFactory">
             <summary>
             Use the factory to create new objects
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonFactory.JsonReaderFactory">
+        <member name="P:SolidJson.IJsonFactory.JsonReaderFactory">
             <summary>
             The reader factory
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonFactory.JsonWriterFactory">
+        <member name="P:SolidJson.IJsonFactory.JsonWriterFactory">
             <summary>
             The writer factory
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonFactory.New(System.Object)">
+        <member name="M:SolidJson.IJsonFactory.New(System.Object)">
             <summary>
             Constructs a new JsonObject instance. The instance
             returned can be used as a root node or added to another
@@ -43,7 +43,7 @@
             <param name="parent"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonFactory.New``1(System.Object)">
+        <member name="M:SolidJson.IJsonFactory.New``1(System.Object)">
             <summary>
             Constructs a new JsonObject and converts it to
             the specified type. Populates the underlying structure
@@ -53,7 +53,7 @@
             <param name="parent"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonFactory.CreateData(SolidRpc.Json.Impl.JsonStruct,System.Type)">
+        <member name="M:SolidJson.IJsonFactory.CreateData(SolidJson.Impl.JsonStruct,System.Type)">
             <summary>
             Constructs data from supplied struct
             </summary>
@@ -61,7 +61,7 @@
             <param name="dataType"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonFactory.CreateJsonStruct(System.Object,System.Type,System.Object)">
+        <member name="M:SolidJson.IJsonFactory.CreateJsonStruct(System.Object,System.Type,System.Object)">
             <summary>
             Creates a IJsonStruct from supplied data.
             </summary>
@@ -70,7 +70,7 @@
             <param name="data"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonFactory.CreateNewJsonStruct(System.Object,System.Type)">
+        <member name="M:SolidJson.IJsonFactory.CreateNewJsonStruct(System.Object,System.Type)">
             <summary>
             Creates a new json struct.
             </summary>
@@ -78,7 +78,7 @@
             <param name="dataType"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonFactory.IsDefaultValue(System.Type,System.Object)">
+        <member name="M:SolidJson.IJsonFactory.IsDefaultValue(System.Type,System.Object)">
             <summary>
             Returns true if supplied data is default value for specified type.
             </summary>
@@ -86,178 +86,178 @@
             <param name="data"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.IJsonFloat">
+        <member name="T:SolidJson.IJsonFloat">
             <summary>
             Represents a Json string
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonFloat.Float">
+        <member name="P:SolidJson.IJsonFloat.Float">
             <summary>
             Gets/sets the float value
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.IJsonInteger">
+        <member name="T:SolidJson.IJsonInteger">
             <summary>
             Represents a Json string
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonInteger.Integer">
+        <member name="P:SolidJson.IJsonInteger.Integer">
             <summary>
             Gets/sets the integer value
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.IJsonObject">
+        <member name="T:SolidJson.IJsonObject">
             <summary>
             Represents a Json object
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonObject.GetProxy``1">
+        <member name="M:SolidJson.IJsonObject.GetProxy``1">
             <summary>
             Returns the proxy that wraps this structure
             </summary>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="P:SolidRpc.Json.IJsonObject.Item(System.String)">
+        <member name="P:SolidJson.IJsonObject.Item(System.String)">
             <summary>
             Returns the json structure for supplied name.
             </summary>
             <param name="name"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonObject.Remove(System.String)">
+        <member name="M:SolidJson.IJsonObject.Remove(System.String)">
             <summary>
             Removes the name/value pair(if it exists)
             </summary>
             <param name="name"></param>
         </member>
-        <member name="T:SolidRpc.Json.IJsonParser">
+        <member name="T:SolidJson.IJsonParser">
             <summary>
             The parser parses strings and streams into Json structures
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonParser.ParseAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonParser.ParseAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Parses the supplied text.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonParser.ParseAsync(System.IO.TextReader,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonParser.ParseAsync(System.IO.TextReader,System.Threading.CancellationToken)">
             <summary>
             Parses the supplied text.
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.IJsonReader">
+        <member name="T:SolidJson.IJsonReader">
             <summary>
             This is the reader that reads json tokens.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonReader.ReadAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonReader.ReadAsync(System.Threading.CancellationToken)">
             <summary>
             Reads the next token
             </summary>
             <returns></returns>
         </member>
-        <member name="P:SolidRpc.Json.IJsonReader.TokenType">
+        <member name="P:SolidJson.IJsonReader.TokenType">
             <summary>
             Returns the token type.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonReader.Value">
+        <member name="P:SolidJson.IJsonReader.Value">
             <summary>
             Returns the value
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.IJsonReaderFactory">
+        <member name="T:SolidJson.IJsonReaderFactory">
             <summary>
             The factory that creates json readers
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonReaderFactory.CreateReader(System.IO.TextReader)">
+        <member name="M:SolidJson.IJsonReaderFactory.CreateReader(System.IO.TextReader)">
             <summary>
             Creates a json reader from supplied text reader.
             </summary>
             <param name="tr"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.IJsonString">
+        <member name="T:SolidJson.IJsonString">
             <summary>
             Represents a Json string
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonString.String">
+        <member name="P:SolidJson.IJsonString.String">
             <summary>
             Gets/sets the string value
             </summary>
         </member>
-        <member name="T:SolidRpc.Json.IJsonStruct">
+        <member name="T:SolidJson.IJsonStruct">
             <summary>
             base class for all Json strutures
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonStruct.Parent">
+        <member name="P:SolidJson.IJsonStruct.Parent">
             <summary>
             Returns the parent structure.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonStruct.RawStruct">
+        <member name="P:SolidJson.IJsonStruct.RawStruct">
             <summary>
             The proxies that wrap the raw data implements
             the IJsonStruct interface. This property returns
             the underlying IJsonStruct.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonStruct.GetParent``1">
+        <member name="M:SolidJson.IJsonStruct.GetParent``1">
             <summary>
             Returns the first parent of specified type.
             </summary>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonStruct.As``1">
+        <member name="M:SolidJson.IJsonStruct.As``1">
             <summary>
             Converts this struct to specified type.
             </summary>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonStruct.As(System.Type)">
+        <member name="M:SolidJson.IJsonStruct.As(System.Type)">
             <summary>
             Converts this struct to specified type.
             </summary>
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonStruct.AsJson(System.Boolean)">
+        <member name="M:SolidJson.IJsonStruct.AsJson(System.Boolean)">
             <summary>
             Emits the structure in json format.
             </summary>
             <param name="pretty"></param>
         </member>
-        <member name="M:SolidRpc.Json.IJsonStruct.WriteAsync(SolidRpc.Json.IJsonWriter,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonStruct.WriteAsync(SolidJson.IJsonWriter,System.Threading.CancellationToken)">
             <summary>
             Writes this structure to supplied writer.
             </summary>
             <param name="writer"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.IJsonTypeHandler">
+        <member name="T:SolidJson.IJsonTypeHandler">
             <summary>
             Interface that all the type handlers must conform to.
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.IJsonTypeHandler.TypeHandled">
+        <member name="P:SolidJson.IJsonTypeHandler.TypeHandled">
             <summary>
             Returns the type handled.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonTypeHandler.CreateNewJsonStruct(System.Object)">
+        <member name="M:SolidJson.IJsonTypeHandler.CreateNewJsonStruct(System.Object)">
             <summary>
             Creates a default json struct for this type(not null)
             </summary>
             <param name="parent"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonTypeHandler.CreateJsonStruct(System.Object,System.Object)">
+        <member name="M:SolidJson.IJsonTypeHandler.CreateJsonStruct(System.Object,System.Object)">
             <summary>
             Creates a JsonStruct for supplied data
             </summary>
@@ -265,108 +265,108 @@
             <param name="data"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonTypeHandler.CreateType(SolidRpc.Json.IJsonStruct)">
+        <member name="M:SolidJson.IJsonTypeHandler.CreateType(SolidJson.IJsonStruct)">
             <summary>
             Creates a type from supplied jsonStruct
             </summary>
             <param name="jsonStruct"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.IJsonTypeHandler.IsDefaultValue(System.Object)">
+        <member name="M:SolidJson.IJsonTypeHandler.IsDefaultValue(System.Object)">
             <summary>
             Determines if the supplied type is a default type.
             </summary>
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.IJsonTypeHandler`1">
+        <member name="T:SolidJson.IJsonTypeHandler`1">
             <summary>
             Interface that all the type handlers must conform to.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonTypeHandler`1.CreateType(SolidRpc.Json.IJsonStruct)">
+        <member name="M:SolidJson.IJsonTypeHandler`1.CreateType(SolidJson.IJsonStruct)">
             <summary>
             Creates a type from supplied json structure
             </summary>
             <param name="jsonStruct"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.IJsonWriter">
+        <member name="T:SolidJson.IJsonWriter">
             <summary>
             Interface to emit json objects to.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteValueAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WriteValueAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Writes a string
             </summary>
             <param name="s"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteValueAsync(System.Boolean,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WriteValueAsync(System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Writes a boolean value
             </summary>
             <param name="boolean"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteValueAsync(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WriteValueAsync(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Writer an integer value
             </summary>
             <param name="i"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteValueAsync(System.Double,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WriteValueAsync(System.Double,System.Threading.CancellationToken)">
             <summary>
             Writes a float value
             </summary>
             <param name="f"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteStartObjectAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WriteStartObjectAsync(System.Threading.CancellationToken)">
             <summary>
             Writes a start object
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WritePropertyNameAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WritePropertyNameAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Writes a start property. Emits "\"&lt;key>&gt;":" or  ",\"&lt;key&gt;\":" based on last written token.
             </summary>
             <param name="name"></param>
             <param name="cancellationToken"></param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:SolidRpc.Json.IJsonWriter.WriteEndObjectAsync(System.Threading.CancellationToken)" -->
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteStartArrayAsync(System.Threading.CancellationToken)">
+        <!-- Badly formed XML comment ignored for member "M:SolidJson.IJsonWriter.WriteEndObjectAsync(System.Threading.CancellationToken)" -->
+        <member name="M:SolidJson.IJsonWriter.WriteStartArrayAsync(System.Threading.CancellationToken)">
             <summary>
             Writes start of an array
             </summary>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteStartArrayElementAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WriteStartArrayElementAsync(System.Threading.CancellationToken)">
             <summary>
             Writes the start of a new array element. Emits "," if last written token is not start of array.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteEndArrayAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WriteEndArrayAsync(System.Threading.CancellationToken)">
             <summary>
             Writes end of an array.
             </summary>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriter.WriteJsonStructAsync(SolidRpc.Json.IJsonStruct,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.IJsonWriter.WriteJsonStructAsync(SolidJson.IJsonStruct,System.Threading.CancellationToken)">
             <summary>
             Writes a json structure. Delegates writing to supplied value if not null.
             </summary>
             <param name="value"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.IJsonWriterFactory">
+        <member name="T:SolidJson.IJsonWriterFactory">
             <summary>
             The factory that creates json writers
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.IJsonWriterFactory.CreateWriter(System.IO.TextWriter,System.Boolean)">
+        <member name="M:SolidJson.IJsonWriterFactory.CreateWriter(System.IO.TextWriter,System.Boolean)">
             <summary>
             Creates a json writer from supplied text writer.
             </summary>
@@ -374,116 +374,116 @@
             <param name="pretty"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonArray">
+        <member name="T:SolidJson.Impl.JsonArray">
             <summary>
             Represents a Json array.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonArray.#ctor(System.Object)">
             <summary>
             Constructs a new instance
             </summary>
             <param name="parent"></param>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonArray.Count">
+        <member name="P:SolidJson.Impl.JsonArray.Count">
             <summary>
             The number of elements
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonArray.IsReadOnly">
+        <member name="P:SolidJson.Impl.JsonArray.IsReadOnly">
             <summary>
             Is the array read only
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonArray.Item(System.Int32)">
+        <member name="P:SolidJson.Impl.JsonArray.Item(System.Int32)">
             <summary>
             Returns the element at supplied index
             </summary>
             <param name="index"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.GetEnumerator">
+        <member name="M:SolidJson.Impl.JsonArray.GetEnumerator">
             <summary>
             Returns the enumerator
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.IndexOf(SolidRpc.Json.IJsonStruct)">
+        <member name="M:SolidJson.Impl.JsonArray.IndexOf(SolidJson.IJsonStruct)">
             <summary>
             Returns the index of supplied item
             </summary>
             <param name="item"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.Insert(System.Int32,SolidRpc.Json.IJsonStruct)">
+        <member name="M:SolidJson.Impl.JsonArray.Insert(System.Int32,SolidJson.IJsonStruct)">
             <summary>
             Inserts an item
             </summary>
             <param name="index"></param>
             <param name="item"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.RemoveAt(System.Int32)">
+        <member name="M:SolidJson.Impl.JsonArray.RemoveAt(System.Int32)">
             <summary>
             Removes an item
             </summary>
             <param name="index"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.Add(SolidRpc.Json.IJsonStruct)">
+        <member name="M:SolidJson.Impl.JsonArray.Add(SolidJson.IJsonStruct)">
             <summary>
             Adds an item
             </summary>
             <param name="item"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.Clear">
+        <member name="M:SolidJson.Impl.JsonArray.Clear">
             <summary>
             Clears the list
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.Contains(SolidRpc.Json.IJsonStruct)">
+        <member name="M:SolidJson.Impl.JsonArray.Contains(SolidJson.IJsonStruct)">
             <summary>
             Returns true if list contains the item.
             </summary>
             <param name="item"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.CopyTo(SolidRpc.Json.IJsonStruct[],System.Int32)">
+        <member name="M:SolidJson.Impl.JsonArray.CopyTo(SolidJson.IJsonStruct[],System.Int32)">
             <summary>
             Copies the elements
             </summary>
             <param name="array"></param>
             <param name="arrayIndex"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.Remove(SolidRpc.Json.IJsonStruct)">
+        <member name="M:SolidJson.Impl.JsonArray.Remove(SolidJson.IJsonStruct)">
             <summary>
             Removes suppied element.
             </summary>
             <param name="item"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonArray.WriteAsync(SolidRpc.Json.IJsonWriter,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonArray.WriteAsync(SolidJson.IJsonWriter,System.Threading.CancellationToken)">
             <summary>
             Writes the array.
             </summary>
             <param name="writer"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonBoolean">
+        <member name="T:SolidJson.Impl.JsonBoolean">
             <summary>
             Represents a Json boolean.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonBoolean.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonBoolean.#ctor(System.Object)">
             <summary>
             Constructs a new instance
             </summary>
             <param name="parent"></param>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonBoolean.Boolean">
+        <member name="P:SolidJson.Impl.JsonBoolean.Boolean">
             <summary>
             The json boolean.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonBoolean.ConvertTo(System.Type,System.Object@)">
+        <member name="M:SolidJson.Impl.JsonBoolean.ConvertTo(System.Type,System.Object@)">
             <summary>
             Convertes the value
             </summary>
@@ -491,31 +491,31 @@
             <param name="convertedValue"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonBoolean.WriteAsync(SolidRpc.Json.IJsonWriter,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonBoolean.WriteAsync(SolidJson.IJsonWriter,System.Threading.CancellationToken)">
             <summary>
             Writes a boolean value.
             </summary>
             <param name="writer"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonFactory">
+        <member name="T:SolidJson.Impl.JsonFactory">
             <summary>
             Represents a json factory.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonFactory.#ctor(SolidRpc.Json.IJsonReaderFactory,SolidRpc.Json.IJsonWriterFactory,System.IServiceProvider)">
+        <member name="M:SolidJson.Impl.JsonFactory.#ctor(SolidJson.IJsonReaderFactory,SolidJson.IJsonWriterFactory,System.IServiceProvider)">
             <summary>
             Constructs a new instance
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonFactory.New(System.Object)">
+        <member name="M:SolidJson.Impl.JsonFactory.New(System.Object)">
             <summary>
             Constructs a new instance
             </summary>
             <param name="parent"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonFactory.New``1(System.Object)">
+        <member name="M:SolidJson.Impl.JsonFactory.New``1(System.Object)">
             <summary>
             Constucts a new instance. Populates the underlying structure
             according to the "EmitDefaultValue" setting
@@ -524,23 +524,23 @@
             <param name="parent"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonFloat">
+        <member name="T:SolidJson.Impl.JsonFloat">
             <summary>
             Represents a Json float.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonFloat.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonFloat.#ctor(System.Object)">
             <summary>
             Constructs a new instance
             </summary>
             <param name="parent"></param>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonFloat.Float">
+        <member name="P:SolidJson.Impl.JsonFloat.Float">
             <summary>
             The json float.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonFloat.ConvertTo(System.Type,System.Object@)">
+        <member name="M:SolidJson.Impl.JsonFloat.ConvertTo(System.Type,System.Object@)">
             <summary>
             Convertes the value
             </summary>
@@ -548,30 +548,30 @@
             <param name="convertedValue"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonFloat.WriteAsync(SolidRpc.Json.IJsonWriter,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonFloat.WriteAsync(SolidJson.IJsonWriter,System.Threading.CancellationToken)">
             <summary>
             Emits a float
             </summary>
             <param name="writer"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonInteger">
+        <member name="T:SolidJson.Impl.JsonInteger">
             <summary>
             Represents a Json integer.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonInteger.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonInteger.#ctor(System.Object)">
             <summary>
             Constructs a new instance
             </summary>
             <param name="parent"></param>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonInteger.Integer">
+        <member name="P:SolidJson.Impl.JsonInteger.Integer">
             <summary>
             The json integer.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonInteger.ConvertTo(System.Type,System.Object@)">
+        <member name="M:SolidJson.Impl.JsonInteger.ConvertTo(System.Type,System.Object@)">
             <summary>
             Convertes the value
             </summary>
@@ -579,39 +579,39 @@
             <param name="convertedValue"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonInteger.WriteAsync(SolidRpc.Json.IJsonWriter,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonInteger.WriteAsync(SolidJson.IJsonWriter,System.Threading.CancellationToken)">
             <summary>
             Writes the integer
             </summary>
             <param name="writer"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonObject">
+        <member name="T:SolidJson.Impl.JsonObject">
             <summary>
             Represents a Json object.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonObject.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonObject.#ctor(System.Object)">
             <summary>
             Constructs a new instance
             </summary>
             <param name="parent"></param>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonObject.Item(System.String)">
+        <member name="P:SolidJson.Impl.JsonObject.Item(System.String)">
             <summary>
             Sets or gets the property.
             </summary>
             <param name="name"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonObject.Remove(System.String)">
+        <member name="M:SolidJson.Impl.JsonObject.Remove(System.String)">
             <summary>
             Removes the property
             </summary>
             <param name="name"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonObject.ConvertTo(System.Type,System.Object@)">
+        <member name="M:SolidJson.Impl.JsonObject.ConvertTo(System.Type,System.Object@)">
             <summary>
             Converts the json object to specified type. - May be an interface.
             </summary>
@@ -619,24 +619,24 @@
             <param name="convertedValue"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonObject.WriteAsync(SolidRpc.Json.IJsonWriter,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonObject.WriteAsync(SolidJson.IJsonWriter,System.Threading.CancellationToken)">
             <summary>
             Writes the object
             </summary>
             <param name="writer"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonParser">
+        <member name="T:SolidJson.Impl.JsonParser">
             <summary>
             Represents a json parser.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonParser.#ctor(SolidRpc.Json.IJsonFactory)">
+        <member name="M:SolidJson.Impl.JsonParser.#ctor(SolidJson.IJsonFactory)">
             <summary>
             Constructs a new instance
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonParser.ParseAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonParser.ParseAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Parses the supplied text as json.
             </summary>
@@ -644,7 +644,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonParser.ParseAsync(System.IO.TextReader,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonParser.ParseAsync(System.IO.TextReader,System.Threading.CancellationToken)">
             <summary>
             Parses the supplied text as json.
             </summary>
@@ -652,7 +652,7 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonParser.ParseAsync(SolidRpc.Json.IJsonReader,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonParser.ParseAsync(SolidJson.IJsonReader,System.Threading.CancellationToken)">
             <summary>
             Parses the content in the reader
             </summary>
@@ -660,23 +660,23 @@
             <param name="cancellationToken"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonString">
+        <member name="T:SolidJson.Impl.JsonString">
             <summary>
             Represents a Json string.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonString.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonString.#ctor(System.Object)">
             <summary>
             Constructs a new instance
             </summary>
             <param name="parent"></param>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonString.String">
+        <member name="P:SolidJson.Impl.JsonString.String">
             <summary>
             The json string.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonString.ConvertTo(System.Type,System.Object@)">
+        <member name="M:SolidJson.Impl.JsonString.ConvertTo(System.Type,System.Object@)">
             <summary>
             Convertes the value
             </summary>
@@ -684,69 +684,69 @@
             <param name="convertedValue"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonString.WriteAsync(SolidRpc.Json.IJsonWriter,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonString.WriteAsync(SolidJson.IJsonWriter,System.Threading.CancellationToken)">
             <summary>
             Writes the string
             </summary>
             <param name="writer"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonStruct">
+        <member name="T:SolidJson.Impl.JsonStruct">
             <summary>
             Represents a Json object.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonStruct.#ctor(System.Object)">
+        <member name="M:SolidJson.Impl.JsonStruct.#ctor(System.Object)">
             <summary>
             Constructs a new instance
             </summary>
             <param name="parent"></param>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonStruct.Parent">
+        <member name="P:SolidJson.Impl.JsonStruct.Parent">
             <summary>
             The parent structure
             </summary>
         </member>
-        <member name="P:SolidRpc.Json.Impl.JsonStruct.RawStruct">
+        <member name="P:SolidJson.Impl.JsonStruct.RawStruct">
             <summary>
             Returns this instance. Proxies returns the wrapped object.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonStruct.As``1">
+        <member name="M:SolidJson.Impl.JsonStruct.As``1">
             <summary>
             Converts this structure to specified struct.
             </summary>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonStruct.As(System.Type)">
+        <member name="M:SolidJson.Impl.JsonStruct.As(System.Type)">
             <summary>
             Converts thisstructure to another type.
             </summary>
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonStruct.AsJson(System.Boolean)">
+        <member name="M:SolidJson.Impl.JsonStruct.AsJson(System.Boolean)">
             <summary>
             Emits the object as a json string
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonStruct.GetParent``1">
+        <member name="M:SolidJson.Impl.JsonStruct.GetParent``1">
             <summary>
             Returns the first parent node of specified type.
             </summary>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonStruct.WriteAsync(SolidRpc.Json.IJsonWriter,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonStruct.WriteAsync(SolidJson.IJsonWriter,System.Threading.CancellationToken)">
             <summary>
             
             </summary>
             <param name="writer"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonStruct.ConvertTo(System.Type,System.Object@)">
+        <member name="M:SolidJson.Impl.JsonStruct.ConvertTo(System.Type,System.Object@)">
             <summary>
             Implements the conversion logic.
             </summary>
@@ -754,107 +754,107 @@
             <param name="convertedValue"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.Impl.JsonWriter">
+        <member name="T:SolidJson.Impl.JsonWriter">
             <summary>
             Implements the writer logic.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.#ctor(System.IO.TextWriter)">
+        <member name="M:SolidJson.Impl.JsonWriter.#ctor(System.IO.TextWriter)">
             <summary>
             Constucts a new instance
             </summary>
             <param name="textWriter"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.Dispose">
+        <member name="M:SolidJson.Impl.JsonWriter.Dispose">
             <summary>
             Disposes of the writer.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteValueAsync(System.Boolean,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteValueAsync(System.Boolean,System.Threading.CancellationToken)">
             <summary>
             Writes a boolean
             </summary>
             <param name="boolean"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteValueAsync(System.Int32,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteValueAsync(System.Int32,System.Threading.CancellationToken)">
             <summary>
             Writes a number
             </summary>
             <param name="i"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteValueAsync(System.Double,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteValueAsync(System.Double,System.Threading.CancellationToken)">
             <summary>
             Writes a number
             </summary>
             <param name="f"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteStartObjectAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteStartObjectAsync(System.Threading.CancellationToken)">
             <summary>
             Writes start of an object
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteEndObjectAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteEndObjectAsync(System.Threading.CancellationToken)">
             <summary>
             Writes end of an object
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WritePropertyNameAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WritePropertyNameAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Writes start of a property
             </summary>
             <param name="name"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteValueAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteValueAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Writes a Json string
             </summary>
             <param name="s"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteStartArrayAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteStartArrayAsync(System.Threading.CancellationToken)">
             <summary>
             Writes start of an array
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteStartArrayElementAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteStartArrayElementAsync(System.Threading.CancellationToken)">
             <summary>
             Writes the start of an array element
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteEndArrayAsync(System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteEndArrayAsync(System.Threading.CancellationToken)">
             <summary>
             Writes end of an array.
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.JsonWriter.WriteJsonStructAsync(SolidRpc.Json.IJsonStruct,System.Threading.CancellationToken)">
+        <member name="M:SolidJson.Impl.JsonWriter.WriteJsonStructAsync(SolidJson.IJsonStruct,System.Threading.CancellationToken)">
             <summary>
             Emits supplied value to the writer.
             </summary>
             <param name="value"></param>
             <param name="cancellationToken"></param>
         </member>
-        <member name="T:SolidRpc.Json.Impl.ObjectProxy`1">
+        <member name="T:SolidJson.Impl.ObjectProxy`1">
             <summary>
             Represents an object proxy.
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:SolidRpc.Json.Impl.ObjectProxy`1.SetDefaultValues(`0)">
+        <member name="M:SolidJson.Impl.ObjectProxy`1.SetDefaultValues(`0)">
             <summary>
             Sets the default values on supplied proxy
             </summary>
             <param name="proxy"></param>
         </member>
-        <member name="M:SolidRpc.Json.Impl.ObjectProxy`1.#ctor">
+        <member name="M:SolidJson.Impl.ObjectProxy`1.#ctor">
             <summary>
             Constructor
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.ObjectProxy`1.Invoke(System.Reflection.MethodInfo,System.Object[])">
+        <member name="M:SolidJson.Impl.ObjectProxy`1.Invoke(System.Reflection.MethodInfo,System.Object[])">
             <summary>
             Invokes the method
             </summary>
@@ -862,25 +862,25 @@
             <param name="args"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.Impl.TypeHandler.TypeHandlerBase`1">
+        <member name="T:SolidJson.Impl.TypeHandler.TypeHandlerBase`1">
             <summary>
             Base class for a type handler.
             </summary>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="P:SolidRpc.Json.Impl.TypeHandler.TypeHandlerBase`1.TypeHandled">
+        <member name="P:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.TypeHandled">
             <summary>
             The handled type
             </summary>
         </member>
-        <member name="M:SolidRpc.Json.Impl.TypeHandler.TypeHandlerBase`1.CreateType(SolidRpc.Json.IJsonStruct)">
+        <member name="M:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.CreateType(SolidJson.IJsonStruct)">
             <summary>
             Creates the type
             </summary>
             <param name="jsonStruct"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.TypeHandler.TypeHandlerBase`1.CreateJsonStruct(System.Object,System.Object)">
+        <member name="M:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.CreateJsonStruct(System.Object,System.Object)">
             <summary>
             Creates the json struct
             </summary>
@@ -888,111 +888,111 @@
             <param name="data"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.TypeHandler.TypeHandlerBase`1.IsDefaultValue(System.Object)">
+        <member name="M:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.IsDefaultValue(System.Object)">
             <summary>
             Determines if supplied value is the default value.
             </summary>
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:SolidRpc.Json.Impl.TypeHandler.TypeHandlerBase`1.CreateNewJsonStruct(System.Object)">
+        <member name="M:SolidJson.Impl.TypeHandler.TypeHandlerBase`1.CreateNewJsonStruct(System.Object)">
             <summary>
             Creates a new struct.
             </summary>
             <param name="parent"></param>
             <returns></returns>
         </member>
-        <member name="T:SolidRpc.Json.JsonToken">
+        <member name="T:SolidJson.JsonToken">
             <summary>
             The token type
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.None">
+        <member name="F:SolidJson.JsonToken.None">
             <summary>
             
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.StartObject">
+        <member name="F:SolidJson.JsonToken.StartObject">
             <summary>
             An object start token.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.StartArray">
+        <member name="F:SolidJson.JsonToken.StartArray">
             <summary>
             An array start token.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.StartConstructor">
+        <member name="F:SolidJson.JsonToken.StartConstructor">
             <summary>
             A constructor start token.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.PropertyName">
+        <member name="F:SolidJson.JsonToken.PropertyName">
             <summary>
             An object property name.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Comment">
+        <member name="F:SolidJson.JsonToken.Comment">
             <summary>
              A comment.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Raw">
+        <member name="F:SolidJson.JsonToken.Raw">
             <summary>
             Raw JSON.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Integer">
+        <member name="F:SolidJson.JsonToken.Integer">
             <summary>
             An integer.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Float">
+        <member name="F:SolidJson.JsonToken.Float">
             <summary>
             A float.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.String">
+        <member name="F:SolidJson.JsonToken.String">
             <summary>
             A string.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Boolean">
+        <member name="F:SolidJson.JsonToken.Boolean">
             <summary>
             A boolean.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Null">
+        <member name="F:SolidJson.JsonToken.Null">
             <summary>
             A null token.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Undefined">
+        <member name="F:SolidJson.JsonToken.Undefined">
             <summary>
             An undefined token.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.EndObject">
+        <member name="F:SolidJson.JsonToken.EndObject">
             <summary>
             An object end token.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.EndArray">
+        <member name="F:SolidJson.JsonToken.EndArray">
             <summary>
             An array end token.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.EndConstructor">
+        <member name="F:SolidJson.JsonToken.EndConstructor">
             <summary>
             A constructor end token.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Date">
+        <member name="F:SolidJson.JsonToken.Date">
             <summary>
             A Date.
             </summary>
         </member>
-        <member name="F:SolidRpc.Json.JsonToken.Bytes">
+        <member name="F:SolidJson.JsonToken.Bytes">
             <summary>
             Byte data.
             </summary>

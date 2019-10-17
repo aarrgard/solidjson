@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SolidRpc.Json
+namespace SolidJson
 {
     /// <summary>
     /// Represents a Json object

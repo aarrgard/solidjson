@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SolidRpc.Json
+namespace SolidJson
 {
     /// <summary>
     /// base class for all Json strutures

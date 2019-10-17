@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using SolidRpc.Json;
+using SolidJson;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 

@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SolidRpc.Json.Newtonsoft
+namespace SolidJson.Newtonsoft
 {
     public class JsonWriter : IJsonWriter
     {

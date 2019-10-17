@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace SolidRpc.Json.Impl.TypeHandler
+namespace SolidJson.Impl.TypeHandler
 {
     public class TypeHandlerArray<TArr, TElem> : TypeHandlerBase<TArr>
     {

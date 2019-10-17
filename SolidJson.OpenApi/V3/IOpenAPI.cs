@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace SolidRpc.Json.OpenApi.V3
+namespace SolidJson.OpenApi.V3
 {
     /// <summary>
     /// This is the root document object of the OpenAPI document.

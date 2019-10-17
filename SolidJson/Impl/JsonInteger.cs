@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SolidRpc.Json.Impl
+namespace SolidJson.Impl
 {
     /// <summary>
     /// Represents a Json integer.

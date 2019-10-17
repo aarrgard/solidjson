@@ -1,4 +1,4 @@
-﻿namespace SolidRpc.Json
+﻿namespace SolidJson
 {
     /// <summary>
     /// The token type

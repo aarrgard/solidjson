@@ -1,7 +1,7 @@
 ﻿using System;
-using SolidRpc.Json.Impl;
+using SolidJson.Impl;
 
-namespace SolidRpc.Json
+namespace SolidJson
 {
     /// <summary>
     /// Use the factory to create new objects
